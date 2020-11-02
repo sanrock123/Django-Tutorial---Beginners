@@ -41,9 +41,54 @@ Django supports several major database engines and you can set up any of them ba
 
 Step 4: Web Server
 
-Create a Project:
+----> Create a Project:
 
 Whether you are on Windows or Linux, just get a terminal or a cmd prompt and navigate to the place you want your project to be created, then use this code −
 
 $ django-admin startproject myproject
+
+This will create a "myproject" folder with the following structure −
+
+myproject/
+   manage.py
+   myproject/
+      __init__.py
+      settings.py
+      urls.py
+      wsgi.py
+      
+$ python manage.py help
+
+-----> Setting Up Your Project:
+
+Your project is set up in the subfolder myproject/settings.py. Following are some important options you might need to set −
+
+DEBUG = True
+
+DATABASES = {
+   'default': {
+      'ENGINE': 'django.db.backends.sqlite3',
+      'NAME': 'database.sql',
+      'USER': '',
+      'PASSWORD': '',
+      'HOST': '',
+      'PORT': '',
+   }
+}
+
+Now that your project is created and configured make sure it's working −
+
+$ python manage.py runserver
+You will get something like the following on running the above code −
+
+Validating models...
+
+0 errors found
+September 03, 2015 - 11:41:50
+Django version 1.6.11, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
+
+
+
 
